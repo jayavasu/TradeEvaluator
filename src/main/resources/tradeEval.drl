@@ -1,0 +1,11 @@
+package com.investment.transaction;
+
+rule "Is of valid trade"
+when
+    $a : Trade( curr_ver == "Y", brn_stat_c != "C", txn_rec_typ == "910", pw_scty_i != "999999", pro_clasfn_c == "MFAA" || pro_clasfn_c == "MFBB", brn_i != "ZZ" )
+    
+then
+    $a.setRule_R001( "Y" );
+end
+
+
